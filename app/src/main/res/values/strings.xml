@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AnimalSounds</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_full_image">FullImageActivity</string>
+    <string name="animal_name">Name</string>
+
+    <string name="pic_1">בבון</string>
+    <string name="pic_2">נמר</string>
+    <string name="pic_3">כלב</string>
+    <string name="pic_4">ינשוף</string>
+    <string name="pic_5">זברה</string>
+    <string name="pic_6">דב</string>
+    <string name="pic_7">זאב</string>
+    <string name="pic_8">פיל</string>
+    <string name="pic_9">קרנף</string>
+    <string name="pic_10">חמור</string>
+    <string name="pic_11">חתול</string>
+    <string name="pic_12">נחש</string>
+    <string name="pic_13">אריה</string>
+    <string name="pic_14">צפרדע</string>
+    <string name="pic_15">פרה</string>
+
+
+</resources>
