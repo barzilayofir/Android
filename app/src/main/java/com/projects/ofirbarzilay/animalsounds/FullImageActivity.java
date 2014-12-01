@@ -20,7 +20,6 @@ public class FullImageActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.full_image);
-
         setContentView(R.layout.activity_fullscreen_view);
 
         // get intent data
