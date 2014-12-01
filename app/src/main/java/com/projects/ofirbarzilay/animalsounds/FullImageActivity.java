@@ -23,12 +23,6 @@ public class FullImageActivity extends Activity {
 
         setContentView(R.layout.activity_fullscreen_view);
 
-
-
-        // displaying selected image first
-        //viewPager.setCurrentItem(position);
-
-
         // get intent data
         Intent intent = getIntent();
 
