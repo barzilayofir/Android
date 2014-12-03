@@ -2,16 +2,25 @@ package com.projects.ofirbarzilay.animalsounds;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import com.projects.ofirbarzilay.animalsounds.adapter.AnimalImageAdapter;
+import com.projects.ofirbarzilay.animalsounds.helper.AppConstant;
+import com.projects.ofirbarzilay.animalsounds.helper.Utils;
+
 
 public class MainActivity extends Activity {
 
+    private Utils utils;
+    private GridView gridView;
+    private int columnWidth;
 
 
     @Override
@@ -19,10 +28,14 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.grid_layout);
 
-        GridView gridView = (GridView) findViewById(R.id.grid_view);
+        gridView = (GridView) findViewById(R.id.grid_view);
 
+        utils = new Utils(this);
+
+        // Initializing Grid View
+        InitializeGridLayout();
         // Instance of ImageAdapter Class
-        gridView.setAdapter(new AnimalImageAdapter(this));
+        gridView.setAdapter(new AnimalImageAdapter(this, columnWidth));
 
         /**
          * On Click event for Single Gridview Item
@@ -41,7 +54,21 @@ public class MainActivity extends Activity {
         });
     }
 
+    private void InitializeGridLayout() {
+        Resources r = Resources.getSystem();
+        float padding = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                AppConstant.GRID_PADDING, r.getDisplayMetrics());
 
+        columnWidth = (int) ((utils.getScreenWidth() - ((AppConstant.NUM_OF_COLUMNS + 1) * padding)) / AppConstant.NUM_OF_COLUMNS);
+
+        gridView.setNumColumns(AppConstant.NUM_OF_COLUMNS);
+        gridView.setColumnWidth(columnWidth);
+        gridView.setStretchMode(GridView.NO_STRETCH);
+        gridView.setPadding((int) padding, (int) padding, (int) padding,
+                (int) padding);
+        gridView.setHorizontalSpacing((int) padding);
+        gridView.setVerticalSpacing((int) padding);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

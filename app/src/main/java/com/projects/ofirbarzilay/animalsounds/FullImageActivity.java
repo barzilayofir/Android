@@ -7,6 +7,8 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.projects.ofirbarzilay.animalsounds.adapter.FullScreenImageAdapter;
+
 
 public class FullImageActivity extends Activity {
 
