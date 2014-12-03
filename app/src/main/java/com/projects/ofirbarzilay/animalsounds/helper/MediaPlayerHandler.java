@@ -1,4 +1,4 @@
-package com.projects.ofirbarzilay.animalsounds;
+package com.projects.ofirbarzilay.animalsounds.helper;
 
 import android.content.Context;
 import android.media.MediaPlayer;
@@ -27,18 +27,28 @@ public class MediaPlayerHandler {
     }
 
     public void startNameSound(Context ctx, Integer resource ){
-        if (mMediaPlayerNameSound != null) {
-            mMediaPlayerNameSound.stop();
+        try {
+            if (mMediaPlayerNameSound != null) {
+                mMediaPlayerNameSound.stop();
+            }
+            mMediaPlayerNameSound = MediaPlayer.create(ctx, resource);
+            mMediaPlayerNameSound.start();
         }
-        mMediaPlayerNameSound = MediaPlayer.create(ctx, resource);
-        mMediaPlayerNameSound.start();
+        catch(Exception e){
+            //TODO log it
+        }
     }
 
     public void startAnimalSound(Context ctx, Integer resource ){
-        if (mMediaPlayerAnimalSound != null) {
-            mMediaPlayerAnimalSound.stop();
+        try {
+            if (mMediaPlayerAnimalSound != null) {
+                mMediaPlayerAnimalSound.stop();
+            }
+            mMediaPlayerAnimalSound = MediaPlayer.create(ctx, resource);
+            mMediaPlayerAnimalSound.start();
         }
-        mMediaPlayerAnimalSound = MediaPlayer.create(ctx, resource);
-        mMediaPlayerAnimalSound.start();
+        catch(Exception e){
+            //TODO log it
+        }
     }
 }

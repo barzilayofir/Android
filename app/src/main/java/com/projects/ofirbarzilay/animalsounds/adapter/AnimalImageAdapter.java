@@ -7,7 +7,7 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-import com.projects.ofirbarzilay.animalsounds.helper.AppConstant;
+import com.projects.ofirbarzilay.animalsounds.helper.ResourceManager;
 
 /**
  * Created by Ofir.Barzilay on 28/11/2014.
@@ -25,12 +25,12 @@ public class AnimalImageAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return AppConstant.ThumbIds.length;
+        return ResourceManager.getNumOfAnimals();
     }
 
     @Override
     public Object getItem(int position) {
-        return AppConstant.ThumbIds[position];
+        return ResourceManager.getAnimal(position).getPictureID();
     }
 
     @Override
@@ -41,7 +41,7 @@ public class AnimalImageAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ImageView imageView = new ImageView(mContext);
-        imageView.setImageResource(AppConstant.ThumbIds[position]);
+        imageView.setImageResource(ResourceManager.getAnimal(position).getPictureID());
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         imageView.setLayoutParams(new GridView.LayoutParams(mImageWidth,
                 mImageWidth));

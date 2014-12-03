@@ -13,6 +13,7 @@ import android.widget.GridView;
 
 import com.projects.ofirbarzilay.animalsounds.adapter.AnimalImageAdapter;
 import com.projects.ofirbarzilay.animalsounds.helper.AppConstant;
+import com.projects.ofirbarzilay.animalsounds.helper.ResourceManager;
 import com.projects.ofirbarzilay.animalsounds.helper.Utils;
 
 
@@ -21,12 +22,15 @@ public class MainActivity extends Activity {
     private Utils utils;
     private GridView gridView;
     private int columnWidth;
+    private ResourceManager mResourceManager;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.grid_layout);
+
+        mResourceManager = ResourceManager.getInstance(this);
 
         gridView = (GridView) findViewById(R.id.grid_view);
 

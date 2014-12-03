@@ -13,9 +13,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.projects.ofirbarzilay.animalsounds.MainActivity;
-import com.projects.ofirbarzilay.animalsounds.MediaPlayerHandler;
 import com.projects.ofirbarzilay.animalsounds.R;
-import com.projects.ofirbarzilay.animalsounds.helper.AppConstant;
+import com.projects.ofirbarzilay.animalsounds.helper.MediaPlayerHandler;
+import com.projects.ofirbarzilay.animalsounds.helper.ResourceManager;
 
 /**
  * Created by Ofir.Barzilay on 30/11/2014.
@@ -33,7 +33,7 @@ public class FullScreenImageAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return AppConstant.ThumbNameSounds.length;
+        return ResourceManager.getNumOfAnimals();
     }
 
     @Override
@@ -52,23 +52,23 @@ public class FullScreenImageAdapter extends PagerAdapter {
 
 
         ImageView imageView = (ImageView) viewLayout.findViewById(R.id.full_image_view);
-        imageView.setImageResource(AppConstant.ThumbIds[position]);
+        imageView.setImageResource(ResourceManager.getAnimal(position).getPictureID());
         imageView.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v) {
-                MediaPlayerHandler.getInstance().startNameSound(_activity.getApplicationContext(), AppConstant.ThumbSounds[position]);
+                MediaPlayerHandler.getInstance().startAnimalSound(_activity.getApplicationContext(), ResourceManager.getAnimal(position).getSoundID());
             }
         });
 
 
         TextView nameButton = (TextView)viewLayout.findViewById(R.id.animal_name_text);
-        nameButton.setText(_activity.getString(AppConstant.ThumbNames[position]));
+        nameButton.setText(_activity.getString(ResourceManager.getAnimal(position).getNameID()));
 
         //final MediaPlayer mp = MediaPlayer.create(this, R.raw.sound_1);
         nameButton.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v) {
-                MediaPlayerHandler.getInstance().startNameSound(_activity.getApplicationContext(), AppConstant.ThumbNameSounds[position]);
+                MediaPlayerHandler.getInstance().startNameSound(_activity.getApplicationContext(), ResourceManager.getAnimal(position).getNameSoundID());
             }
         });
 
@@ -123,7 +123,7 @@ public class FullScreenImageAdapter extends PagerAdapter {
 
     private int getNextPosition(int position){
         int newPosition;
-        int size = AppConstant.ThumbIds.length;
+        int size = ResourceManager.getNumOfAnimals();
         if (position + 1 < size){
             newPosition = position + 1;
         }
@@ -135,7 +135,7 @@ public class FullScreenImageAdapter extends PagerAdapter {
 
     private int getPreviousPosition(int position){
         int newPosition;
-        int size = AppConstant.ThumbIds.length;
+        int size = ResourceManager.getNumOfAnimals();
         if (position - 1 >= 0){
             newPosition = position - 1;
         }
