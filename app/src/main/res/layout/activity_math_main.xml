@@ -1,0 +1,118 @@
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/GridLayout1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:columnCount="3"
+    android:gravity="right"
+    android:orientation="horizontal"
+    android:paddingLeft="30dp"
+    android:rowCount="5">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="3"
+        android:layout_gravity="right"
+        android:paddingLeft="10dp"
+        android:text="@string/choose_level"
+        android:textSize="24sp"
+        android:textStyle="bold|italic" />
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="3"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_hard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_margin="10sp"
+            android:background="#ffff113e"
+            android:text="@string/hard"
+            android:onClick="onRadioButtonClicked"
+            android:textStyle="bold|italic" />
+
+        <RadioButton
+            android:id="@+id/radio_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_margin="10sp"
+            android:background="#ffffff72"
+            android:text="@string/medium"
+            android:onClick="onRadioButtonClicked"
+            android:textStyle="bold|italic" />
+
+        <RadioButton
+            android:id="@+id/radio_easy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_margin="10sp"
+            android:background="#ff1cec1d"
+            android:checked="true"
+            android:text="@string/easy"
+            android:onClick="onRadioButtonClicked"
+            android:textStyle="bold|italic" />
+    </RadioGroup>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="3"
+        android:layout_gravity="right"
+        android:paddingLeft="10dp"
+        android:text="@string/choose_math_subject"
+        android:textSize="24sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/addition_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:onClick="openMathExercisePage"
+        android:clickable="true"
+        android:textSize="46sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/subtraction_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:text="-"
+        android:onClick="openMathExercisePage"
+        android:clickable="true"
+        android:textSize="46sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/multiplication_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_row="4"
+        android:text="x"
+        android:onClick="openMathExercisePage"
+        android:clickable="true"
+        android:textSize="46sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/division_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:layout_row="4"
+        android:onClick="openMathExercisePage"
+        android:clickable="true"
+        android:text=":"
+        android:textSize="46sp"
+        android:textStyle="bold|italic" />
+
+</GridLayout>

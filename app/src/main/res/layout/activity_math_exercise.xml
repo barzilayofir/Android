@@ -1,0 +1,10 @@
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/math_exercise_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:columnCount="3"
+    android:gravity="right"
+    android:orientation="horizontal"
+    android:paddingLeft="30dp"
+    ></GridLayout>
+

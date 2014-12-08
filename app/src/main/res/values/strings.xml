@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Fun Time</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_full_image">FullImageActivity</string>
+    <string name="animal_name">Name</string>
+    <string name="baboon">בבון</string>
+    <string name="leopard">נמר</string>
+    <string name="dog">כלב</string>
+    <string name="owl">ינשוף</string>
+    <string name="zebra">זברה</string>
+    <string name="bear">דב</string>
+    <string name="wolf">זאב</string>
+    <string name="elephant">פיל</string>
+    <string name="rhino">קרנף</string>
+    <string name="donkey">חמור</string>
+    <string name="cat">חתול</string>
+    <string name="snake">נחש</string>
+    <string name="lion">אריה</string>
+    <string name="frog">צפרדע</string>
+    <string name="cow">פרה</string>
+    <string name="title_activity_math_main">MathMainActivity</string>
+    <string name="choose_level">בחר דרגת קושי:</string>
+    <string name="easy">קל</string>
+    <string name="medium">בינוני</string>
+    <string name="hard">קשה</string>
+    <string name="choose_math_subject">בחר נושא:</string>
+    <string name="title_activity_math_exercise">MathExerciseActivity</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>
