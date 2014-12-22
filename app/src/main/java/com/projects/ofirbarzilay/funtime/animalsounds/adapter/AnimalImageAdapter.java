@@ -7,6 +7,7 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
+import com.projects.ofirbarzilay.funtime.animalsounds.Animal;
 import com.projects.ofirbarzilay.funtime.animalsounds.helper.ResourceManager;
 
 
@@ -41,11 +42,22 @@ public class AnimalImageAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ImageView imageView = new ImageView(mContext);
-        imageView.setImageResource(ResourceManager.getAnimal(position).getPictureID());
-        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        imageView.setLayoutParams(new GridView.LayoutParams(mImageWidth,
-                mImageWidth));
+        ImageView imageView;
+        if (convertView == null) {//TODO improve performance here, perhaps use thumbnails
+
+            imageView = new ImageView(mContext);
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView.setLayoutParams(new GridView.LayoutParams(mImageWidth,
+                    mImageWidth));
+        }
+        else{
+            imageView = (ImageView)convertView;
+        }
+        Animal animal = ResourceManager.getAnimal(position);
+        int pictureID = animal.getPictureID();
+        //Log.d("picture id", "animal name: " + mContext.getString(animal.getNameID()));
+        imageView.setImageResource(pictureID);
+
 
 
         return imageView;

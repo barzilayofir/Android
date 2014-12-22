@@ -20,6 +20,7 @@ public class AppConstant {
     public static final int MEDIUM_MAX_NUMBER = 20;
     public static final int HARD_MAX_NUMBER = 100;
     public static final int MULTIPLIER_MAX_NUMBER = 10;
+    public static final int NUM_OF_EXERCISES = 10;
 
 
     // SD card image directory

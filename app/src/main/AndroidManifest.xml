@@ -2,13 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.projects.ofirbarzilay.funtime" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.projects.ofirbarzilay.funtime.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,32 +19,41 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.projects.ofirbarzilay.funtime.animalsounds.FullImageActivity"
+            android:name=".animalsounds.FullImageActivity"
             android:label="@string/title_activity_full_image" >
         </activity>
         <activity
-            android:name="com.projects.ofirbarzilay.funtime.animalsounds.AnimalSoundsMainActivity"
+            android:name=".animalsounds.AnimalSoundsMainActivity"
             android:label="@string/title_activity_math_main"
-            android:parentActivityName="com.projects.ofirbarzilay.funtime.MainActivity" >
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.projects.ofirbarzilay.funtime.MainActivity" />
         </activity>
         <activity
-            android:name="com.projects.ofirbarzilay.funtime.math.MathMainActivity"
+            android:name=".math.MathMainActivity"
             android:label="@string/title_activity_math_main"
-            android:parentActivityName="com.projects.ofirbarzilay.funtime.MainActivity" >
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.projects.ofirbarzilay.funtime.MainActivity" />
         </activity>
         <activity
             android:name=".math.MathExerciseActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/title_activity_math_exercise"
-            android:parentActivityName="com.projects.ofirbarzilay.funtime.math.MathMainActivity" >
+            android:parentActivityName=".math.MathMainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.projects.ofirbarzilay.funtime.math.MathMainActivity" />
+        </activity>
+        <activity
+            android:name=".jokes.JokesActivity"
+            android:label="@string/title_activity_jokes"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.projects.ofirbarzilay.funtime.MainActivity" />
         </activity>
     </application>
 

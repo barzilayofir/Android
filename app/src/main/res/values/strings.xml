@@ -20,6 +20,13 @@
     <string name="lion">אריה</string>
     <string name="frog">צפרדע</string>
     <string name="cow">פרה</string>
+    <string name="boar">חזיר בר</string>
+    <string name="stork">חסידה</string>
+    <string name="tiger">טיגריס</string>
+    <string name="swan">ברבור</string>
+    <string name="alligator">תנין</string>
+    <string name="gorilla">גורילה</string>
+    <string name="horse">סוס</string>
     <string name="title_activity_math_main">MathMainActivity</string>
     <string name="choose_level">בחר דרגת קושי:</string>
     <string name="easy">קל</string>
@@ -28,5 +35,15 @@
     <string name="choose_math_subject">בחר נושא:</string>
     <string name="title_activity_math_exercise">MathExerciseActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_jokes">JokesActivity</string>
+    <string name="show_joke">לחץ להציג בדיחה</string>
+    <string name="well_done_1">כל הכבוד</string>
+	<string name="well_done_2">מצויין</string>
+	<string name="well_done_3">אתה אלוף</string>
+	<string name="well_done_4">נפלא</string>
+    <string name="fix_mistakes_1">כמעט הצלחת</string>
+	<string name="fix_mistakes_2">צריך לתקן</string>
+	<string name="fix_mistakes_3">נסה שוב</string>
+	<string name="fix_mistakes_4">בסוף תצליח</string>
 
 </resources>

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.projects.ofirbarzilay.funtime.animalsounds.AnimalSoundsMainActivity;
+import com.projects.ofirbarzilay.funtime.jokes.JokesActivity;
 import com.projects.ofirbarzilay.funtime.math.MathMainActivity;
 
 
@@ -33,6 +34,15 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), MathMainActivity.class);
+                startActivity(i);
+            }
+        });
+
+        ImageView jokesView = (ImageView)findViewById(R.id.jokes_view);
+        jokesView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), JokesActivity.class);
                 startActivity(i);
             }
         });

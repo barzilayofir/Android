@@ -16,13 +16,21 @@ import static com.projects.ofirbarzilay.funtime.utils.AppConstant.HARD;
 import static com.projects.ofirbarzilay.funtime.utils.AppConstant.MEDIUM;
 
 public class MathMainActivity extends Activity {
-
+    public static final int EXERCISE_REQUEST_CODE = 1;
     private int mDifficultyLevel = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_math_main);
+
+        Intent intent = getIntent();
+        init(intent);
+    }
+
+    private void init(Intent intent) {
+        mDifficultyLevel = intent.getIntExtra(AppConstant.DIFFICULTY_LEVEL, 0);
+        selectDifficultyLevel();
     }
 
     public void openMathExercisePage(View view){
@@ -48,7 +56,36 @@ public class MathMainActivity extends Activity {
         //put extra data such as level
         i.putExtra(AppConstant.DIFFICULTY_LEVEL, mDifficultyLevel);
         i.putExtra(AppConstant.MATH_CATEGORY, category);
-        startActivity(i);
+        //startActivity(i);
+
+        startActivityForResult(i, EXERCISE_REQUEST_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == EXERCISE_REQUEST_CODE && (resultCode == RESULT_OK)){
+            init(data);
+        }
+    }
+
+    private void selectDifficultyLevel(){
+        RadioButton radioButton;
+        switch(mDifficultyLevel) {
+            case AppConstant.HARD:
+                radioButton = (RadioButton) findViewById(R.id.radio_hard);
+                break;
+            case AppConstant.MEDIUM:
+                radioButton = (RadioButton) findViewById(R.id.radio_medium);
+                break;
+            case AppConstant.EASY:
+                radioButton = (RadioButton) findViewById(R.id.radio_easy);
+                break;
+            default:
+                radioButton = (RadioButton) findViewById(R.id.radio_easy);
+                break;
+        }
+        radioButton.setChecked(true);
     }
 
     public void onRadioButtonClicked(View view) {

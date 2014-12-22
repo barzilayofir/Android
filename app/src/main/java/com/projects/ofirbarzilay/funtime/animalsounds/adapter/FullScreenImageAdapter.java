@@ -2,7 +2,6 @@ package com.projects.ofirbarzilay.funtime.animalsounds.adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -13,7 +12,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.projects.ofirbarzilay.funtime.R;
-import com.projects.ofirbarzilay.funtime.animalsounds.AnimalSoundsMainActivity;
 import com.projects.ofirbarzilay.funtime.animalsounds.helper.MediaPlayerHandler;
 import com.projects.ofirbarzilay.funtime.animalsounds.helper.ResourceManager;
 
@@ -95,9 +93,10 @@ public class FullScreenImageAdapter extends PagerAdapter {
         homeButton.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
-                Intent intent = new Intent(_activity.getApplicationContext(), AnimalSoundsMainActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                _activity.startActivity(intent);
+                //Intent intent = new Intent(_activity.getApplicationContext(), AnimalSoundsMainActivity.class);
+                //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                //_activity.startActivity(intent);
+                _activity.finish();
             }
         });
 

@@ -6,15 +6,15 @@ android {
 
     defaultConfig {
         applicationId "com.projects.ofirbarzilay.funtime"
-        minSdkVersion 15
+        minSdkVersion 17
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
     }
     buildTypes {
         release {
-            runProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled true
+
         }
     }
 }
